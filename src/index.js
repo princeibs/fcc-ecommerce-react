@@ -4,7 +4,7 @@ import "jquery";
 import "popper.js/dist/umd/popper";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
-import NavBar from "./App.jsx";
+import NavBar from "./NavBar.jsx";
 import "./index.css";
 
 let element = <button class="btn btn-primary">Hello</button>;
