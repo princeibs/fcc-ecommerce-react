@@ -3,7 +3,6 @@ import Product from "./Product";
 
 export default class ShoppingCart extends Component {
   constructor(props) {
-    console.log("Constructor - Shopping");
     super(props);
     this.state = {
       products: [
@@ -17,15 +16,12 @@ export default class ShoppingCart extends Component {
   }
 
   componentDidMount() {
-    console.log("componentDidMount - Shopping");
   }
 
   componentDidUpdate() {
-    console.log("componentDidUpdate - Shopping");
   }
 
   conponentWillUnmount() {
-    console.log("conponentDidUnmount - Shopping")
   }
 
   handleIncrement = (product, max) => {
@@ -63,7 +59,6 @@ export default class ShoppingCart extends Component {
   };
 
   render() {
-    console.log("render - Shopping");
     return (
       <React.Fragment>
         <h1 className="m-3">Shopping Cart</h1>
