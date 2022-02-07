@@ -34,6 +34,19 @@ export default class ShoppingCart extends Component {
     }
   };
 
+  handleDelete = (product) => {
+    if (window.confirm("Are you sure you wanto to delete?")) {
+      const allProducts = [...this.state.products];
+      let prodIndex = allProducts.indexOf(product);
+
+      this.setState({
+        products: allProducts.filter((prod, index) => {
+          return prodIndex !== index;
+        }),
+      });
+    }
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -46,6 +59,7 @@ export default class ShoppingCart extends Component {
                 product={product}
                 onIncrement={this.handleIncrement}
                 onDecrement={this.handleDecrement}
+                onDelete={this.handleDelete}
               >
                 <button className="btn btn-primary">Buy Now</button>
               </Product>

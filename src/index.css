@@ -4,3 +4,6 @@
 .navbar-style {
     background-color: blueviolet !important;
 }
+.hand-cursor {
+  cursor: pointer
+}

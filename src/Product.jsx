@@ -9,7 +9,16 @@ export default class Product extends Component {
       <div className="col-lg-6">
         <div className="card m-2">
           <div className="card-body">
-            <div className="text-muted">#{this.state.product.id}</div>
+            <div className="text-muted">
+              #{this.state.product.id}
+              <span
+                className="pull-right"
+                onClick={() => this.props.onDelete(this.state.product)}
+              >
+                <i className="fa fa-times"></i>
+              </span>
+            </div>
+
             <h5 className="pt-5 border-top">
               {this.state.product.productName}
             </h5>
@@ -21,8 +30,18 @@ export default class Product extends Component {
                 {this.state.product.quantity}
               </span>
               <div className="btn-group">
-                <button onClick={() => this.props.onIncrement(this.state.product, 10)} className="btn btn-outline-success">+</button>
-                <button onClick={() => this.props.onDecrement(this.state.product, 0)} className="btn btn-outline-warning">-</button>
+                <button
+                  onClick={() => this.props.onIncrement(this.state.product, 10)}
+                  className="btn btn-outline-success"
+                >
+                  +
+                </button>
+                <button
+                  onClick={() => this.props.onDecrement(this.state.product, 0)}
+                  className="btn btn-outline-warning"
+                >
+                  -
+                </button>
               </div>
             </div>
             <div className="float-right">{this.props.children}</div>

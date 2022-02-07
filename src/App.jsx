@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import Customers from "./Customers";
 import ShoppingCart from "./ShoppingCart";
 
+
 export default class App extends Component {
   render() {
     return (
