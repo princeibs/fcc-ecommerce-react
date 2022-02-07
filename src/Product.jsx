@@ -1,10 +1,28 @@
 import React, { Component } from "react";
 
 export default class Product extends Component {
-  state = {
-    product: this.props.product,
-  };
+  constructor(props) {
+    console.log('Constructor - Product');
+    super(props);
+    this.state = {
+      product: this.props.product,
+    };
+  }
+
+  componentDidMount() {
+    console.log("componentDidMount - Shopping");
+  }
+
+  componentDidUpdate() {
+    console.log("componentDidUpdate - Shopping");
+  }
+
+  componentWillUnmount() {
+    console.log("ComponentDidUnmount - Shopping");
+  }
+
   render() {
+    console.log("render - Shopping");
     return (
       <div className="col-lg-6">
         <div className="card m-2">

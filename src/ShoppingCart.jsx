@@ -2,15 +2,31 @@ import React, { Component } from "react";
 import Product from "./Product";
 
 export default class ShoppingCart extends Component {
-  state = {
-    products: [
-      { id: 1, productName: "iPhone", price: 2300, quantity: 9 },
-      { id: 2, productName: "Samsung", price: 2100, quantity: 3 },
-      { id: 3, productName: "Infinix", price: 1300, quantity: 1 },
-      { id: 4, productName: "Nokia", price: 3300, quantity: 5 },
-      { id: 5, productName: "Nexus", price: 7300, quantity: 7 },
-    ],
-  };
+  constructor(props) {
+    console.log("Constructor - Shopping");
+    super(props);
+    this.state = {
+      products: [
+        { id: 1, productName: "iPhone", price: 2300, quantity: 9 },
+        { id: 2, productName: "Samsung", price: 2100, quantity: 3 },
+        { id: 3, productName: "Infinix", price: 1300, quantity: 1 },
+        { id: 4, productName: "Nokia", price: 3300, quantity: 5 },
+        { id: 5, productName: "Nexus", price: 7300, quantity: 7 },
+      ],
+    };
+  }
+
+  componentDidMount() {
+    console.log("componentDidMount - Shopping");
+  }
+
+  componentDidUpdate() {
+    console.log("componentDidUpdate - Shopping");
+  }
+
+  conponentWillUnmount() {
+    console.log("conponentDidUnmount - Shopping")
+  }
 
   handleIncrement = (product, max) => {
     const allProducts = [...this.state.products];
@@ -27,7 +43,6 @@ export default class ShoppingCart extends Component {
   handleDecrement = (product, min) => {
     const allProducts = [...this.state.products];
     let index = allProducts.indexOf(product);
-
     if (allProducts[index].quantity > min) {
       allProducts[index].quantity--;
       this.setState({ products: allProducts });
@@ -48,6 +63,7 @@ export default class ShoppingCart extends Component {
   };
 
   render() {
+    console.log("render - Shopping");
     return (
       <React.Fragment>
         <h1 className="m-3">Shopping Cart</h1>
