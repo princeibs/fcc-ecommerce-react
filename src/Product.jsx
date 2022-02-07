@@ -38,7 +38,7 @@ export default class Product extends Component {
             <div>${this.state.product.price}</div>
           </div>
           <div className="card-footer">
-            <div className="float-left">
+            <div className="float-start">
               <span className="badge text-black">
                 {this.state.product.quantity}
               </span>
@@ -51,13 +51,13 @@ export default class Product extends Component {
                 </button>
                 <button
                   onClick={() => this.props.onDecrement(this.state.product, 0)}
-                  className="btn btn-outline-warning"
+                  className="btn btn-outline-danger"
                 >
                   -
                 </button>
               </div>
             </div>
-            <div className="float-right">{this.props.children}</div>
+            <div className="float-end">{this.props.children}</div>
           </div>
         </div>
       </div>

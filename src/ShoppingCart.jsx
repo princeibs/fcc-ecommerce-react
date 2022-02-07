@@ -5,24 +5,27 @@ export default class ShoppingCart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [
-        { id: 1, productName: "iPhone", price: 2300, quantity: 9 },
-        { id: 2, productName: "Samsung", price: 2100, quantity: 3 },
-        { id: 3, productName: "Infinix", price: 1300, quantity: 1 },
-        { id: 4, productName: "Nokia", price: 3300, quantity: 5 },
-        { id: 5, productName: "Nexus", price: 7300, quantity: 7 },
-      ],
+      products: [],
     };
   }
 
   componentDidMount() {
+    const data = fetch("http://localhost:5000/products", {
+      method: "GET",
+    });
+    data.then((response) => {
+      console.log(response);
+
+      const objData = response.json();
+      objData.then((data) => {
+        this.setState({ products: data });
+      });
+    });
   }
 
-  componentDidUpdate() {
-  }
+  componentDidUpdate() {}
 
-  conponentWillUnmount() {
-  }
+  conponentWillUnmount() {}
 
   handleIncrement = (product, max) => {
     const allProducts = [...this.state.products];
