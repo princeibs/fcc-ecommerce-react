@@ -9,19 +9,16 @@ export default class ShoppingCart extends Component {
     };
   }
 
-  componentDidMount() {
-    const data = fetch("http://localhost:5000/products", {
+  componentDidMount = async () => {
+    const response = await fetch("http://localhost:5000/products", {
       method: "GET",
     });
-    data.then((response) => {
-      console.log(response);
-
-      const objData = response.json();
-      objData.then((data) => {
-        this.setState({ products: data });
-      });
+    
+    const data = await response.json();
+    this.setState({
+      products: data,
     });
-  }
+  };
 
   componentDidUpdate() {}
 
