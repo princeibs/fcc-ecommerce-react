@@ -1,3 +1,4 @@
+import { timers } from "jquery";
 import React, { Component } from "react";
 import Product from "./Product";
 
@@ -12,8 +13,8 @@ export default class ShoppingCart extends Component {
   componentDidMount = async () => {
     const response = await fetch("http://localhost:5000/products", {
       method: "GET",
-    });
-    
+    }); 
+  
     const data = await response.json();
     this.setState({
       products: data,

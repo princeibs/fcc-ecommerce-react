@@ -10,18 +10,21 @@ export default class Login extends Component {
     };
   }
 
-  onLoginClick = () => {
-    if (
-      this.state.email === "test@mail.com" &&
-      this.state.password === "test123"
-    ) {
+  onLoginClick = async () => {
+    const response = await fetch(
+      `http://localhost:5000/users?email=${this.state.email}&password=${this.state.password}`
+    );
+    const body = await response.json();
+    console.log(body);
+
+    if (body.length > 0) {
       this.setState({
         message: <span className="text-success">Successfully logged in</span>,
       });
     } else {
-     this.setState({
-      message: <span className="text-danger">Invalid email or password</span>
-     })
+      this.setState({
+        message: <span className="text-danger">Invalid email or password</span>,
+      });
     }
   };
 
