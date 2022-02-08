@@ -1,0 +1,13 @@
+{
+    "products": [
+        { "id": 1, "productName": "iPhone", "price": 2300, "quantity": 9 },
+        { "id": 2, "productName": "Samsung", "price": 2100, "quantity": 3 },
+        { "id": 3, "productName": "Infinix", "price": 1300, "quantity": 1 },
+        { "id": 4, "productName": "Nokia", "price": 3300, "quantity": 5 },
+        { "id": 5, "productName": "Nexus", "price": 7300, "quantity": 7 }
+    ],
+    "users": [
+        { "id": 1, "email": "admin@mail.com", "password": "admin123" },
+        { "id": 2, "email": "test@mail.com", "password": "test123" }
+    ]
+}
