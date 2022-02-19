@@ -7,12 +7,13 @@ import Dashboard from "./Dashboard";
 import {Route, Routes} from "react-router";
 import {BrowserRouter} from "react-router-dom";
 
+
 export default class App extends Component {
   render() {
     return (
       <React.Fragment>
         <NavBar />
-        <Login />
+        <ShoppingCart />
       </React.Fragment>
     );
   }
